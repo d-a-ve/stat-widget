@@ -1,0 +1,210 @@
+/*------ font --------*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
+
+:root{
+    /*----- color palette -------*/
+    --flame: #ea5d29;
+    --sunglow-smoke: #f6d146;
+    --sail: #b4e1ff;
+    --armadilo: #4a4a4a;
+    --aluminium: #999999;
+    --medium-sea-green: #30bb64;
+    --black: #000;
+    --white: #fff;
+    --mid-black: #161616;
+
+    /*---- font size -----*/
+    --fs-main:18px;
+    --fs-bigger: 62px;
+
+    /*------- font weight --------*/
+    --fw-light:300;
+    --fw-normal:400;
+    --fw-medium: 500;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
+}
+
+main{
+    background: var(--black); 
+    width:100%;  
+}
+
+.stats-container,
+.stat-widget{
+    display:flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.stats-container{
+    padding: 0.5rem 0.8rem;
+    gap: 1rem 
+}
+
+/*------- widget container ---------*/
+.stat-widget{
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    background: var(--mid-black);
+    border-radius: 12px;
+}
+
+.title-numbers,
+.trend{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;    
+}
+
+.stat-title,
+.numbers,
+.trend-text{
+    font-size: var(--fs-main);
+    line-height: 32px;
+}
+
+.stat-title,
+.trend-text{    
+    color: var(--aluminium);
+    font-weight: var(--fw-light);
+    position:relative;
+}
+
+.numbers{
+    color: var(--medium-sea-green);
+    font-weight: var(--fw-medium);
+}
+
+.stat-title::before,
+.line{
+    content:'';
+    display:block;
+    width:6px;
+    border-radius: 3px;
+}
+
+.stat-title::before{
+    left:-16px;
+    top:2px;
+    height: 26px;
+    position: absolute;
+}
+
+.main-number{
+    font-weight: var(--fw-light);
+    font-size: var(--fs-bigger);
+    text-align-last: right;
+    color: var(--white);
+}
+
+/*-------- the graph & lines ---------*/
+.graph{    
+    display:flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 4px;
+}
+
+.line{
+    background: var(--armadilo);
+}
+
+.first .line:nth-of-type(1),
+.first .line:nth-of-type(3),
+.second .line:nth-of-type(1){
+    height: 19px
+}
+
+.first .line:nth-of-type(2),
+.first .line:nth-of-type(5){
+    height:13px
+}
+
+.first .line:nth-of-type(4),
+.second .line:nth-of-type(4){
+    height:16px
+}
+
+.second .line:nth-of-type(2),
+.second .line:nth-of-type(5){
+    height:12px;
+}
+
+.second .line:nth-of-type(3){
+    height:22px;
+}
+
+/*------- The different border colors ---------*/
+.flame{
+    border:2px solid var(--flame);
+}
+
+.sail{
+    border:2px solid var(--sail);
+}
+
+.sunglow{
+    border:2px solid var(--sunglow-smoke);
+}
+
+/*------- line before the widget title ---------*/
+.flame .stat-title::before{
+    background: var(--flame);
+}
+
+.sunglow .stat-title::before{
+    background: var(--sunglow-smoke);
+}
+
+.sail .stat-title::before{
+    background: var(--sail);
+}
+
+@media screen and (min-width:450px){
+    main{
+        display:flex;
+        justify-content: center;
+    }
+
+    .stats-container{        
+        flex-basis: 70%;
+    }
+}
+
+@media screen and (min-width:700px){
+    main{
+        align-items: center;
+        height: 100vh; 
+    }
+
+    .stats-container{
+        -ms-flex-direction: row;
+        flex-direction: row;
+        flex-basis: 60%;
+    }
+
+    .flame{
+        flex: 1.5
+    }
+
+    .sunglow{
+        flex: 1
+    }
+
+    .sail{
+        flex: 1
+    }
+}
+
+@media screen and (min-width:1000px){
+    .stats-container{
+        flex-basis: 80%;
+    }
+}
+
