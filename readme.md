@@ -1,4 +1,7 @@
-## This is a challenge from the Web Developer Mentor, it is a static stat widget.
+This is a challenge from the Web Developer Mentor, it is a static stat widget.
+
+The site is live at [statwidget-webdev.netlify.app](https://statwidget-webdev.netlify.app/)
+
 A clip of the stat widget in desktop and mobile view is below
 
 [stat widget clip.webm](https://user-images.githubusercontent.com/108290182/184662437-c7bf1ef6-b011-4d60-8e96-2f52bf73f853.webm)
